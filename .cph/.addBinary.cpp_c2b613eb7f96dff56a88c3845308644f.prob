@@ -1,0 +1,1 @@
+{"name":"Local: addBinary","url":"c:\\Users\\shoumyo\\C programing\\addBinary.cpp","tests":[{"id":1721527020652,"input":"100\n1","output":"101"},{"id":1721970352522,"input":"10010\n10","output":"10100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\shoumyo\\C programing\\addBinary.cpp","group":"local","local":true}
