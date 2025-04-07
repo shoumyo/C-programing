@@ -1,36 +1,46 @@
-#include<iostream>
-#include<cmath>
-#include <math.h>
 #include<bits/stdc++.h>
-#include<climits>
-#include<string>
-#include<algorithm>
 using namespace std;
 
 
-
-int main(){
-
-    string str="jeydedjafeadfa";
-    int freq[26];
-
-    for(int i=0;i<26;i++){
-        freq[i]=0;
+class student{
+    private:
+    vector<vector<int>>numbers;
+    vector<int>ans;
+    public:
+    
+    void input(vector<vector<int>>&a,int n){
+       for(int i=0;i<n;i++){
+           for(int j=0;j<5;j++){
+               numbers[i][j]=a[i][j];
+               ans[i]+=a[i][j];
+           }
+       }
     }
-
-    for(int i=0;i<str.size();i++){
-        freq[str[i]-'a']++;
+    
+    int total(int n){
+        return ans[n-1];
     }
+};
 
-    char ans='a';
-    int maxf=0;
-
-    for(int i=0;i<26;i++){
-        if(maxf<freq[i]){
-            maxf=freq[i];
-            ans=i+'a';
+int main() {
+    
+    int n;
+    cin>>n;
+    vector<vector<int>>a;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<5;j++){
+            cin>>a[i][j];
         }
     }
-    cout<<maxf<<" "<<ans<<endl;
-   return 0;
+    student s;
+    s.input(a,n);
+    int count=0;
+    
+    for(int i=2;i<=n;i++){
+        if(s.total(1)>s.total(i)){
+            count++;
+        }
+    }
+    cout<<count<<endl;
+    return 0;
 }

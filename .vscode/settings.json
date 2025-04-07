@@ -5,5 +5,7 @@
     "C_Cpp.errorSquiggles": "enabled",
     "editor.defaultFormatter": null,
     "editor.formatOnSave": false,
-    "editor.formatOnType": false
+    "editor.formatOnType": false,
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Default Dark Modern"
 }
