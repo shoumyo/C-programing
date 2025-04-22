@@ -1,21 +1,28 @@
 #include<stdio.h>
 
-struct wareHouse{
-
-  //circle
+struct circle{
   int cirId;
   float diameter;
+};
 
-  //rectangle
+struct rectangle{
   int recId;
   float height;
   float width;
+};
 
-  //cube
+struct cube{
   int cubeId;
   float cHeight;
   float cWidth;
   float depth;
+};
+
+struct wareHouse{
+    struct circle c;
+    struct rectangle r;
+    struct cube cc;
+    
 };
 
 
@@ -34,9 +41,9 @@ int main(){
 
   struct wareHouse w[100];
   for(int i=0;i<100;i++){
-    w[i].cirId=0;
-    w[i].recId=0;
-    w[i].cubeId=0;
+    w[i].c.cirId=0;
+    w[i].r.recId=0;
+    w[i].cc.cubeId=0;
   }
 
 
@@ -47,50 +54,50 @@ int main(){
     scanf("%d",&n);
     if(n==1){
       printf("Input diameter:");
-      scanf("%f",&w[i].diameter);
+      scanf("%f",&w[i].c.diameter);
       totalShape++;
       circle++;
-      w[i].cirId=id;
+      w[i].c.cirId=id;
       id++;
-      cirArea+=3.1416*w[i].diameter*w[i].diameter;
-      totalArea+=3.1416*w[i].diameter*w[i].diameter;
+      cirArea+=3.1416*w[i].c.diameter*w[i].c.diameter;
+      totalArea+=3.1416*w[i].c.diameter*w[i].c.diameter;
       i++;
     }
 
     else if(n==2){
       printf("Input height & width:");
-      scanf("%fx%f",&w[i].height,&w[i].width);
+      scanf("%fx%f",&w[i].r.height,&w[i].r.width);
       totalShape++;
       rectangle++;
-      w[i].recId=id;
+      w[i].r.recId=id;
       id++;
-      recArea+=w[i].height*w[i].width;
-      totalArea+=w[i].height*w[i].width;
+      recArea+=w[i].r.height*w[i].r.width;
+      totalArea+=w[i].r.height*w[i].r.width;
       i++;
     }
 
     else if(n==3){
       printf("Input height,width & depth:");
-      scanf("%fx%fx%f",&w[i].cHeight,&w[i].cWidth,&w[i].depth);
+      scanf("%fx%fx%f",&w[i].cc.cHeight,&w[i].cc.cWidth,&w[i].cc.depth);
       totalShape++;
       cube++;
-      w[i].cubeId=id;
+      w[i].cc.cubeId=id;
       id++;
-      cubeArea+=w[i].cHeight*w[i].cWidth*w[i].depth;
-      totalArea+=w[i].cHeight*w[i].cWidth*w[i].depth;
+      cubeArea+=w[i].cc.cHeight*w[i].cc.cWidth*w[i].cc.depth;
+      totalArea+=w[i].cc.cHeight*w[i].cc.cWidth*w[i].cc.depth;
       i++;
     }
 
     else if(n==4){
       for(int i=1;i<=totalShape;i++){
-        if(w[i-1].cirId==i){
-          printf("%d  circle          %f\n",i,w[i-1].diameter);
+        if(w[i-1].c.cirId==i){
+          printf("%d  circle          %f\n",i,w[i-1].c.diameter);
         }
-        else if(w[i-1].recId==i){
-          printf("%d  rectangle       %f x %f\n",i,w[i-1].height,w[i-1].width);
+        else if(w[i-1].r.recId==i){
+          printf("%d  rectangle       %f x %f\n",i,w[i-1].r.height,w[i-1].r.width);
         }
         else{
-          printf("%d  cube            %f x %f x %f\n",i,w[i-1].cHeight,w[i-1].cWidth,w[i-1].depth);
+          printf("%d  cube            %f x %f x %f\n",i,w[i-1].cc.cHeight,w[i-1].cc.cWidth,w[i-1].cc.depth);
         }
       }
       i++;
