@@ -102,9 +102,9 @@ int main(){
       printf("Total number of cubes:%d\n",cube);
       printf("Total number of circles:%d\n");
       printf("Total area:%lf\n",totalArea);
-      printf("The total area occupied by rectanlges:%lf (%lf %)\n",recArea,(recArea/totalArea)*100);
-      printf("The total area occupied by circles:%lf (%lf %)\n",cirArea,(cirArea/totalArea)*100);
-      printf("The total area occupied by cubes:%lf (%lf %)\n",cubeArea,(cubeArea/totalArea)*100);
+      printf("The total area occupied by rectanlges:%lf (%lf )\n",recArea,(recArea/totalArea)*100);
+      printf("The total area occupied by circles:%lf (%lf )\n",cirArea,(cirArea/totalArea)*100);
+      printf("The total area occupied by cubes:%lf (%lf )\n",cubeArea,(cubeArea/totalArea)*100);
       i++;
     }
 
